@@ -19,15 +19,23 @@ public class Ejercicio03 {
             //miArray[i] = 0;
             System.out.println(miArray[i]);
         }
+        i=0;
         System.out.println("Entrada al bucle while");
         while (i < miArray.length) {
-            System.out.println(miArray[i]);
+            System.out.println("Valor celda "+i+":"+miArray[i]);
             i++;
         }
+        i=0;
         do {
-            System.out.println(miArray);
+            System.out.println("Valor celda "+i+":"+miArray[i]);
             i++;
         } while (i < miArray.length);
+        i=0;
+        do {
+            System.out.println("Valor de celda " + i + ": " + miArray[i]);
+            i++;
+        }while(i< miArray.length);
+
     }
 }
 
