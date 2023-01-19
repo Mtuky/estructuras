@@ -6,7 +6,9 @@ public class Perro {
     Perro() {
         this.raza = "";
     }
-
+    public Perro(String raza) {
+        this.raza = raza;
+    }
 
     public String getRaza() {
         return raza;
@@ -14,5 +16,12 @@ public class Perro {
 
     public void setRaza(String raza) {
         this.raza = raza;
+    }
+
+    @Override
+    public String toString() {
+        return "Perro{" +
+                "raza='" + raza + '\'' +
+                '}';
     }
 }
