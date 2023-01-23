@@ -1,7 +1,7 @@
 package com.unisys.miapp;
 
 public class Persona {
-    public String nombre;
+    private String nombre;
     public String tlf;
     public String dni;
 
@@ -39,5 +39,14 @@ public class Persona {
 
     public void setDni(String dni) {
         this.dni = dni;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", tlf='" + tlf + '\'' +
+                ", dni='" + dni + '\'' +
+                '}';
     }
 }
