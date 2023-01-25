@@ -1,6 +1,8 @@
 package com.unisys.miapp;
 
 import java.io.Serializable;
+import java.util.Objects;
+import java.util.*;
 
 public class Pieza implements Serializable {
 
@@ -39,5 +41,18 @@ public class Pieza implements Serializable {
                 "nombrePieza='" + nombrePieza + '\'' +
                 ", tipoPieza='" + tipoPieza + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pieza pieza = (Pieza) o;
+        return Objects.equals(nombrePieza, pieza.nombrePieza) && Objects.equals(tipoPieza, pieza.tipoPieza);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombrePieza, tipoPieza);
     }
 }

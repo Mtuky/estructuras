@@ -1,10 +1,7 @@
 package com.unisys.miapp;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 public class Ordenador implements Serializable {
@@ -13,17 +10,18 @@ public class Ordenador implements Serializable {
     private String marca;
     private String modelo;
 
-    private Pieza pieza;
+    private List<Pieza> piezas;
 
     public Ordenador() {
         this.marca = "";
         this.modelo = "";
-        this.pieza = null;
+        this.piezas = new ArrayList<Pieza>();
     }
-    public Ordenador(String marca, String modelo, Pieza pieza) {
+
+    public Ordenador(String marca, String modelo, List<Pieza> piezas) {
         this.marca = marca;
         this.modelo = modelo;
-        this.pieza = pieza;
+        this.piezas = piezas;
     }
 
     public String getMarca() {
@@ -42,12 +40,12 @@ public class Ordenador implements Serializable {
         this.modelo = modelo;
     }
 
-    public Pieza getPieza() {
-        return pieza;
+    public List<Pieza> getPiezas() {
+        return piezas;
     }
 
-    public void setPieza(Pieza pieza) {
-        this.pieza = pieza;
+    public void setPieza(List<Pieza> piezas) {
+        this.piezas = piezas;
     }
 
     @Override
@@ -55,8 +53,21 @@ public class Ordenador implements Serializable {
         return "Ordenador{" +
                 "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
-                ", pieza='" + pieza + '\'' +
+                ", pieza='" + piezas + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ordenador ordenador = (Ordenador) o;
+        return Objects.equals(marca, ordenador.marca) && Objects.equals(modelo, ordenador.modelo) && Objects.equals(piezas, ordenador.piezas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(marca, modelo, piezas);
     }
 }
 
