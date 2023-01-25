@@ -1,8 +1,10 @@
 package com.unisys.miapp;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 public class Ordenador implements Serializable {
@@ -11,18 +13,19 @@ public class Ordenador implements Serializable {
     private String marca;
     private String modelo;
 
-    private Set<Pieza> pieza;;
+    private Pieza pieza;
 
     public Ordenador() {
         this.marca = "";
         this.modelo = "";
-        this.pieza = "";
+        this.pieza = null;
     }
     public Ordenador(String marca, String modelo, Pieza pieza) {
         this.marca = marca;
         this.modelo = modelo;
         this.pieza = pieza;
     }
+
     public String getMarca() {
         return marca;
     }
@@ -56,3 +59,5 @@ public class Ordenador implements Serializable {
                 '}';
     }
 }
+
+
